@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <!-- custom css link -->
+    <link rel="stylesheet" href="">
+    {% block extra_stylesheet %}
+    {% endblock %}
+</head>
+<body>
+    <!-- navigation start -->
+    {% block navigation %}
+    {% endblock %}
+    
+    <!-- navigation ends -->
+
+    {% block content %}
+    {% endblock %}
+
+
+<!-- footer -->
+{% block footer %}
+{% endblock %}
+<!-- custom js link -->
+<script src=""></script>
+</body>
+</html>

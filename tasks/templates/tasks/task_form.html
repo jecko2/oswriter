@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+{% load static %}
+<!-- heading/option for now -->
+<!-- {% block title %}{% endblock %} -->
+<!-- css for this page in case of any modification -->
+{% block extra_stylesheet %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<style>
+    .form-calc{
+        width: 270px;
+        height: 450px;
+        top: 60px;
+        right: 70px;
+        box-shadow: 0 0 4px 1px #1b1406;
+        position: absolute;
+        border-radius: 6px;
+        opacity: 1;
+        z-index: 999;
+        align-items: center;
+        justify-content: center;
+    }
+    .form-box{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+        margin: 10px auto;
+    }
+    .calc-head{
+        color: #101922;
+        font-size: 18px;
+        font-family: 'Poppins', sans-serif;
+        border-bottom: 2px solid #101922;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+    }
+    .field-wrap{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+   .task-level{
+       padding-bottom: 18px;
+   }
+    select{
+        margin: 2px 10px 10px 0;
+        padding: 6px 28px;
+        width: 100%;
+        border-radius: 5px;
+        
+    }
+    select option{
+        margin-top: 10px;
+        padding: 10px 0;
+        border-radius: 10px;
+        width: 90%;
+        color: #0f0f0f;
+        font-family: 'Poppins', sans-serif;
+        font-size: 16px;
+        outline: none;
+        border: none;
+
+    }
+    .page-add-sub{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 87%;
+        margin: 7px auto;
+        padding: 15px;
+        background-color: crimson;
+        border-radius: 7px;
+
+    }
+    .page-display input{
+        max-width: 50px;
+        margin: 0 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        text-align: center;
+        color: #C4A53E;
+    }
+    .min-box{
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 1px solid #101922;
+        align-items: center;
+        text-align: center;
+        cursor: pointer;
+        padding: 4px;
+    }
+    button{
+        width: 100%;
+        padding: 8.5px;
+        text-align: center;
+        margin-top: 10px;
+        border-radius: 5px;
+    }
+   
+</style>
+
+{% endblock %}
+
+{% block content %}
+<div class="form-calc">
+    <div class="form-box">
+        <h3 class="calc-head">Calculate Price</h3>
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="field-wrap">
+                <div class="task-level">
+                    <select name="task_level" class="task_level" id="id_task_level" required>
+                        <option value="" selected=""> Academic level</option>
+                        <option value="HIGH SCHOOL">High School</option>
+                        <option value="COLLEGE">College</option>
+                        <option value="UNDERGRADUATE">Undergraduate</option>
+                        <option value="MASTERS">Masters</option>
+                    </select>
+                </div>
+                <div class="task_type">
+                    <select name="task_type" class="task_type" required="" id="id_task_type">
+                        <option value="" selected="">Assignment type</option>
+                        <option value="ESSAY">Essay</option>
+                        <option value="REPORT">Report</option>
+                        <option value="CASE STUDY">Case Study</option>
+                      </select>
+                </div>
+                <div class="page-add-sub">
+        
+                    <div class="min-box">
+                        <i class="fas fa-minus"></i>
+                    </div>
+        
+                    <div class="page-display">
+                        <input type="number" name="task_pages" value="1" class="task_pages" 
+                        required="" id="id_task_pages">
+                    </div>
+        
+                    <div class="min-box">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-outline md-4">submit</button>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}
+<style>
+   
+   /*#10EE67, #FECB00, #F5B842 #CBF83E, #ABA8A9, 
+   #D8DFEE #A7AC38, #FFFFFF, #C4A53E, #BD9C74
+    #25395C, #2787EA, #1C67D2, #A4B0FF, #EA7166, #FCA78A*/
+</style>

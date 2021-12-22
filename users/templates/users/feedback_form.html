@@ -1,0 +1,25 @@
+{% extends 'users/main-user.html' %}
+
+{% block styles %}Feed Back Form{% endblock %}
+
+{% block content %}
+
+<h1>Feed Back Form</h1>
+<div class="container">
+    <div class="form-control">
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="input-card">
+                <label for="subject">Subject: </label>
+                <input type="text" class="subject-field" name="subject">
+            </div>
+            <div class="input-card">
+                <label for="message">Subject: </label>
+                <textarea name="message" id="" cols="30" rows="10"></textarea>
+            </div>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>
+
+{% endblock %}

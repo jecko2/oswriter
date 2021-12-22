@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+<!-- heading/option for now -->
+<!-- {% block title %}{% endblock %} -->
+<!-- css for this page in case of any modification -->
+{% block extra_stylesheet %}
+{% endblock %}
+
+
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}
