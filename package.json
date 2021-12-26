@@ -1,0 +1,25 @@
+{
+  "name": "oscar1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tailwindcss -i src/styles.css -o public/output.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jecko2/oswriter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jecko2/oswriter/issues"
+  },
+  "homepage": "https://github.com/jecko2/oswriter#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.4.5",
+    "tailwindcss": "^3.0.7"
+  }
+}

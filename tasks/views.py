@@ -1,9 +1,16 @@
 from django.shortcuts import render, redirect
 from .forms import TaskForm, TaskDetailForm
+from django.shortcuts import reverse
 from .models import Task, TaskDetail
+from django.views import generic
 from django.contrib import messages
 
-
+class TaskFormView(generic.CreateView):
+    form_class = TaskForm
+    template_name = 'task/task_form.html'
+    
+    def get_success_url(self):
+        return reverse('task:task_detail')
 def taskViewForm(request):
     if request.method == 'GET':
         form = TaskForm()
